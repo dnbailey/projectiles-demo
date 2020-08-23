@@ -80,4 +80,11 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function on_rock_blas
     sprite.destroy()
     otherSprite.destroy(effects.fire, 100)
     info.changeScoreBy(1)
+    if (info.score() % 10 === 0) {
+        if (info.life() < 5) {
+            info.changeLifeBy(1)
+        }
+        
+    }
+    
 })

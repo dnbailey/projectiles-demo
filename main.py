@@ -89,5 +89,8 @@ def on_rock_blasted(sprite, otherSprite):
     sprite.destroy()
     otherSprite.destroy(effects.fire, 100)
     info.change_score_by(1)
+    if info.score() % 10 is 0:
+        if info.life() < 5:
+            info.change_life_by(1)
 
 sprites.on_overlap(SpriteKind.projectile, SpriteKind.enemy, on_rock_blasted)
