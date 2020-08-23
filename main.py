@@ -28,5 +28,28 @@ spaceship.set_flag(SpriteFlag.StayInScreen, True)
 controller.move_sprite(spaceship, 200, 200)
 
 # Generate Enemies
+def on_update_interval():
+    rock = sprites.create(img("""
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . c c c . . . . . . .
+    . . . . . c c b . c c . . . . .
+    . . . . . c c c c . c c c . . .
+    . . . . c c c c c c . c . . . .
+    . . . . c . c c c c c b . . . .
+    . . . c c c c c . . c c . . . .
+    . . . . . c b b c c b c . . . .
+    . . . . . c . c b c c . . . . .
+    . . . . . c c . c c c . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    """))
+    rock.set_position(scene.screen_width(), randint(0,scene.screen_height()))
+    rock.set_velocity(-50, 0)
+
+game.on_update_interval(750, on_update_interval)
 
 # Shoot Enemies with Projectiles
