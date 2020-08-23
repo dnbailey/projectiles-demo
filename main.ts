@@ -47,3 +47,24 @@ game.onUpdateInterval(750, function on_update_interval() {
     rock.setPosition(scene.screenWidth(), randint(0, scene.screenHeight()))
     rock.setVelocity(-50, 0)
 })
+//  Shoot Enemies with Projectiles
+controller.player1.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function on_button_event_a_pressed() {
+    let blast = sprites.createProjectileFromSprite(img`
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . 2 2 4 5 . . . . . .
+    . . . . . . 2 2 4 5 . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    `, spaceship, 50, 0)
+})

@@ -53,3 +53,24 @@ def on_update_interval():
 game.on_update_interval(750, on_update_interval)
 
 # Shoot Enemies with Projectiles
+def on_button_event_a_pressed():
+    blast = sprites.create_projectile_from_sprite(img("""
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . 2 2 4 5 . . . . . .
+    . . . . . . 2 2 4 5 . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    """), spaceship, 50, 0)
+
+controller.player1.on_button_event(ControllerButton.A, ControllerButtonEvent.PRESSED, on_button_event_a_pressed)
